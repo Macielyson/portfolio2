@@ -2,13 +2,14 @@
 "use client";
 import { useState } from "react";
 
-export default function Contato() {
+const Contato = () => {
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
     assunto: "",
     mensagem: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -24,25 +25,16 @@ export default function Contato() {
     }, 2000);
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const socialLinks = [
-    { name: "GitHub", url: "#", icon: "🐱", color: "hover:text-gray-300" },
-    { name: "LinkedIn", url: "#", icon: "💼", color: "hover:text-blue-400" },
-    { name: "Instagram", url: "#", icon: "📷", color: "hover:text-pink-400" },
-    { name: "Twitter", url: "#", icon: "🐦", color: "hover:text-cyan-400" },
-  ];
-
   return (
     <section id="contato" className="py-20 relative overflow-hidden">
-      {/* Background Effects */}
+      {/* Background Effects 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl">
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-float"></div>
         <div
@@ -50,50 +42,34 @@ export default function Contato() {
           style={{ animationDelay: "3s" }}
         ></div>
       </div>
-
+*/}
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-space-grotesk mb-4">
             Vamos <span className="text-cyan-400">Conversar</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Pronto para levar seu projeto para o próximo nível? Entre em contato
-            e vamos criar algo incrível juntos!
-          </p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Pronto para levar seu projeto para o próximo nível? Entre em contato e vamos criar algo incrível juntos!</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Informações de Contato */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-cyan-400 mb-6 font-space-grotesk">
-                Vamos Conectar
-              </h3>
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Estou sempre aberto a discutir novas oportunidades, projetos
-                interessantes ou simplesmente conversar sobre tecnologia e
-                inovação.
-              </p>
+              <h3 className="text-2xl font-bold text-cyan-400 mb-6 font-space-grotesk">Vamos Conectar</h3>
+              <p className="text-gray-300 mb-8 leading-relaxed">Estou sempre aberto a discutir novas oportunidades, projetos interessantes ou simplesmente conversar sobre tecnologia e inovação.</p>
             </div>
 
-            {/* Informações de Contato */}
             <div className="space-y-4">
               <div className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-gray-800/50 transition-all duration-300 group">
-                <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform duration-300">
-                  📧
-                </div>
+                <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform duration-300">📧</div>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
-                  <p className="text-white font-medium">
-                    macielyson.s@gmail.com
-                  </p>
+                  <p className="text-white font-medium">macielyson.s@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-gray-800/50 transition-all duration-300 group">
-                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 group-hover:scale-110 transition-transform duration-300">
-                  📍
-                </div>
+                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 group-hover:scale-110 transition-transform duration-300">📍</div>
                 <div>
                   <p className="text-gray-400 text-sm">Localização</p>
                   <p className="text-white font-medium">Caxias - MA, Brasil</p>
@@ -107,10 +83,7 @@ export default function Contato() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    htmlFor="nome"
-                    className="block text-sm font-medium text-gray-300 mb-2"
-                  >
+                  <label htmlFor="nome" className="block text-sm font-medium text-gray-300 mb-2">
                     Seu Nome *
                   </label>
                   <input
@@ -126,10 +99,7 @@ export default function Contato() {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-300 mb-2"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                     Seu Email *
                   </label>
                   <input
@@ -146,10 +116,7 @@ export default function Contato() {
               </div>
 
               <div>
-                <label
-                  htmlFor="assunto"
-                  className="block text-sm font-medium text-gray-300 mb-2"
-                >
+                <label htmlFor="assunto" className="block text-sm font-medium text-gray-300 mb-2">
                   Assunto *
                 </label>
                 <input
@@ -165,10 +132,7 @@ export default function Contato() {
               </div>
 
               <div>
-                <label
-                  htmlFor="mensagem"
-                  className="block text-sm font-medium text-gray-300 mb-2"
-                >
+                <label htmlFor="mensagem" className="block text-sm font-medium text-gray-300 mb-2">
                   Mensagem *
                 </label>
                 <textarea
@@ -206,4 +170,5 @@ export default function Contato() {
       </div>
     </section>
   );
-}
+};
+export default Contato;

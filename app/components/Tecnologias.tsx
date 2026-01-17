@@ -1,8 +1,5 @@
-// components/Tecnologias.tsx
 "use client";
 import { useEffect, useState } from "react";
-
-// Definir o tipo corretamente
 interface Tecnologia {
   nome: string;
   categoria: string;
@@ -58,9 +55,7 @@ export default function Tecnologias() {
     if (categoriaAtiva === "all") {
       setTecnologiasFiltradas(tecnologias);
     } else {
-      setTecnologiasFiltradas(
-        tecnologias.filter((tech) => tech.categoria === categoriaAtiva)
-      );
+      setTecnologiasFiltradas(tecnologias.filter((tech) => tech.categoria === categoriaAtiva));
     }
   }, [categoriaAtiva]);
 
@@ -69,10 +64,7 @@ export default function Tecnologias() {
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-float"></div>
-        <div
-          className="absolute bottom-10 right-10 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "2s" }}
-        ></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -80,9 +72,7 @@ export default function Tecnologias() {
           <h2 className="text-4xl md:text-5xl font-bold font-space-grotesk mb-4">
             Tecnologias & <span className="text-cyan-400">Ferramentas</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Tecnologias que utilizo para criar soluções incríveis e inovadoras
-          </p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Tecnologias que utilizo para criar soluções incríveis e inovadoras</p>
         </div>
 
         {/* Filtros por Categoria */}
@@ -153,17 +143,13 @@ export default function Tecnologias() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(
-              calc(-250px * ${tecnologiasFiltradas.length} / 2)
-            );
+            transform: translateX(calc(-250px * ${tecnologiasFiltradas.length} / 2));
           }
         }
 
         @keyframes scroll-reverse {
           0% {
-            transform: translateX(
-              calc(-250px * ${tecnologiasFiltradas.length} / 2)
-            );
+            transform: translateX(calc(-250px * ${tecnologiasFiltradas.length} / 2));
           }
           100% {
             transform: translateX(0);
@@ -207,9 +193,7 @@ function TecnologiaCard({ tech }: { tech: Tecnologia }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        background: isHovered
-          ? `linear-gradient(135deg, ${tech.cor}20, ${tech.cor}10)`
-          : undefined,
+        background: isHovered ? `linear-gradient(135deg, ${tech.cor}20, ${tech.cor}10)` : undefined,
       }}
     >
       <div className="h-full flex flex-col items-center justify-center p-4 text-center">
@@ -217,9 +201,7 @@ function TecnologiaCard({ tech }: { tech: Tecnologia }) {
           className="text-3xl mb-3 transition-transform duration-300"
           style={{
             transform: isHovered ? "scale(1.2) rotate(5deg)" : "scale(1)",
-            filter: isHovered
-              ? "drop-shadow(0 0 8px rgba(0, 245, 255, 0.3))"
-              : "none",
+            filter: isHovered ? "drop-shadow(0 0 8px rgba(0, 245, 255, 0.3))" : "none",
           }}
         >
           {tech.icone}
@@ -233,9 +215,7 @@ function TecnologiaCard({ tech }: { tech: Tecnologia }) {
         >
           {tech.nome}
         </h3>
-        <span className="text-xs text-gray-400 mt-1 capitalize">
-          {tech.categoria}
-        </span>
+        <span className="text-xs text-gray-400 mt-1 capitalize">{tech.categoria}</span>
       </div>
 
       {/* Efeito de brilho no hover */}

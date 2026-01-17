@@ -1,4 +1,3 @@
-// Atualização do app/page.tsx para incluir a nova seção
 "use client";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
