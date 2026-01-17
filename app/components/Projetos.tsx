@@ -1,4 +1,3 @@
-// components/Projetos.tsx
 "use client";
 import { useState } from "react";
 
@@ -6,8 +5,7 @@ const projetos = [
   {
     id: 1,
     titulo: "E-commerce Moderno",
-    descricao:
-      "Plataforma de e-commerce completa com painel administrativo, gateway de pagamento e sistema de recomendação.",
+    descricao: "Plataforma de e-commerce completa com painel administrativo, gateway de pagamento e sistema de recomendação.",
     imagem: "/api/placeholder/600/400",
     tecnologias: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
     linkDemo: "#",
@@ -17,8 +15,7 @@ const projetos = [
   {
     id: 2,
     titulo: "App de Gestão de Tarefas",
-    descricao:
-      "Aplicativo de produtividade com sincronização em tempo real, notificações e analytics.",
+    descricao: "Aplicativo de produtividade com sincronização em tempo real, notificações e analytics.",
     imagem: "/api/placeholder/600/400",
     tecnologias: ["React", "Firebase", "Tailwind", "PWA"],
     linkDemo: "#",
@@ -28,8 +25,7 @@ const projetos = [
   {
     id: 3,
     titulo: "API REST Escalável",
-    descricao:
-      "Backend robusto com autenticação JWT, documentação Swagger e deploy em cloud.",
+    descricao: "Backend robusto com autenticação JWT, documentação Swagger e deploy em cloud.",
     imagem: "/api/placeholder/600/400",
     tecnologias: ["Node.js", "Express", "MongoDB", "Docker"],
     linkDemo: "#",
@@ -39,8 +35,7 @@ const projetos = [
   {
     id: 4,
     titulo: "Dashboard Analytics",
-    descricao:
-      "Painel de analytics com gráficos interativos, relatórios em tempo real e exportação de dados.",
+    descricao: "Painel de analytics com gráficos interativos, relatórios em tempo real e exportação de dados.",
     imagem: "/api/placeholder/600/400",
     tecnologias: ["React", "TypeScript", "Chart.js", "FastAPI"],
     linkDemo: "#",
@@ -50,8 +45,7 @@ const projetos = [
   {
     id: 5,
     titulo: "App Mobile Social",
-    descricao:
-      "Rede social mobile com chat em tempo real, upload de mídia e geolocalização.",
+    descricao: "Rede social mobile com chat em tempo real, upload de mídia e geolocalização.",
     imagem: "/api/placeholder/600/400",
     tecnologias: ["React Native", "Firebase", "Redux", "Expo"],
     linkDemo: "#",
@@ -61,8 +55,7 @@ const projetos = [
   {
     id: 6,
     titulo: "Sistema de Agendamento",
-    descricao:
-      "Plataforma de agendamentos com calendário integrado, confirmações automáticas e multi-idiomas.",
+    descricao: "Plataforma de agendamentos com calendário integrado, confirmações automáticas e multi-idiomas.",
     imagem: "/api/placeholder/600/400",
     tecnologias: ["Vue.js", "Laravel", "MySQL", "WebSockets"],
     linkDemo: "#",
@@ -71,15 +64,10 @@ const projetos = [
   },
 ];
 
-export default function Projetos() {
+const Projetos = () => {
   const [filter, setFilter] = useState("all");
 
-  const filteredProjetos =
-    filter === "all"
-      ? projetos
-      : filter === "featured"
-      ? projetos.filter((p) => p.featured)
-      : projetos;
+  const filteredProjetos = filter === "all" ? projetos : filter === "featured" ? projetos.filter((p) => p.featured) : projetos;
 
   return (
     <section id="projetos" className="py-20 relative">
@@ -99,9 +87,7 @@ export default function Projetos() {
           <h2 className="text-4xl md:text-5xl font-bold font-space-grotesk mb-4">
             Meus <span className="text-cyan-400">Projetos</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
-            Uma seleção dos meus trabalhos mais recentes e desafiadores
-          </p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">Uma seleção dos meus trabalhos mais recentes e desafiadores</p>
 
           {/* Filtros */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -110,9 +96,7 @@ export default function Projetos() {
                 key={filterType}
                 onClick={() => setFilter(filterType)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  filter === filterType
-                    ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/25"
-                    : "glass text-gray-300 hover:text-cyan-400 hover:border-cyan-400/30"
+                  filter === filterType ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/25" : "glass text-gray-300 hover:text-cyan-400 hover:border-cyan-400/30"
                 }`}
               >
                 {filterType === "all" ? "Todos" : "Destaques"}
@@ -133,9 +117,7 @@ export default function Projetos() {
               {/* Badge Featured */}
               {projeto.featured && (
                 <div className="absolute top-4 left-4 z-20">
-                  <span className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold">
-                    Destaque
-                  </span>
+                  <span className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold">Destaque</span>
                 </div>
               )}
 
@@ -145,10 +127,7 @@ export default function Projetos() {
                   <span className="text-4xl">🚀</span>
                 </div>
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                  <a
-                    href={projeto.linkDemo}
-                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
-                  >
+                  <a href={projeto.linkDemo} className="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     Demo
                   </a>
                   <a
@@ -162,20 +141,13 @@ export default function Projetos() {
 
               {/* Conteúdo */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2 font-space-grotesk">
-                  {projeto.titulo}
-                </h3>
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                  {projeto.descricao}
-                </p>
+                <h3 className="text-xl font-bold text-white mb-2 font-space-grotesk">{projeto.titulo}</h3>
+                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{projeto.descricao}</p>
 
                 {/* Tecnologias */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {projeto.tecnologias.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-xs font-medium border border-cyan-400/20"
-                    >
+                    <span key={techIndex} className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-xs font-medium border border-cyan-400/20">
                       {tech}
                     </span>
                   ))}
@@ -183,17 +155,11 @@ export default function Projetos() {
 
                 {/* Links */}
                 <div className="flex justify-between items-center pt-4 border-t border-gray-800">
-                  <a
-                    href={projeto.linkDemo}
-                    className="text-cyan-400 hover:text-cyan-300 text-sm font-medium flex items-center gap-2 transition-colors"
-                  >
+                  <a href={projeto.linkDemo} className="text-cyan-400 hover:text-cyan-300 text-sm font-medium flex items-center gap-2 transition-colors">
                     Ver Demo
                     <span>→</span>
                   </a>
-                  <a
-                    href={projeto.linkGithub}
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
-                  >
+                  <a href={projeto.linkGithub} className="text-gray-400 hover:text-white text-sm transition-colors">
                     <span className="flex items-center gap-2">
                       <span>GitHub</span>
                       <span>📁</span>
@@ -210,9 +176,7 @@ export default function Projetos() {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <p className="text-gray-400 mb-6">
-            Interessado em ver mais projetos?
-          </p>
+          <p className="text-gray-400 mb-6">Interessado em ver mais projetos?</p>
           <a
             href="#contato"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
@@ -224,4 +188,5 @@ export default function Projetos() {
       </div>
     </section>
   );
-}
+};
+export default Projetos;

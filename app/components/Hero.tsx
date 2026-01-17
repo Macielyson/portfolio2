@@ -1,6 +1,7 @@
 // components/Hero.tsx
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState("");
@@ -19,30 +20,24 @@ export default function Hero() {
   }, [currentIndex, fullText]);
 
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative pt-20"
-    >
+    <section id="inicio" className="min-h-screen flex items-center justify-center relative pt-20">
       {/* Background Elements */}
+
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-float"></div>
-        <div
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "2s" }}
-        ></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
         {/* Avatar/Image Placeholder */}
         <div className="w-32 h-32 mx-auto mb-8 rounded-full glass border-2 border-cyan-400/30 flex items-center justify-center animate-glow">
-          <span className="text-cyan-400 text-2xl">👨‍💻</span>
+          <span className="text-cyan-400 text-2xl">
+            <Image src="/images/profile.jpg" alt="Macielyson - Desenvolvedor Full Stack" width={200} height={200} className="rounded-full object-cover" priority />
+          </span>
         </div>
 
         <h1 className="text-4xl md:text-7xl font-bold font-space-grotesk mb-6">
-          Olá, eu sou{" "}
-          <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent bg-size-200 animate-gradient">
-            Seu Nome
-          </span>
+          Olá, eu sou <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent bg-size-200 animate-gradient">Macielyson</span>
         </h1>
 
         <div className="h-12 mb-8">
@@ -53,8 +48,7 @@ export default function Hero() {
         </div>
 
         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Transformo ideias em realidade digital através de código limpo,
-          designs impressionantes e soluções inovadoras.
+          Transformo ideias em realidade digital através de código limpo, designs impressionantes e soluções inovadoras.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

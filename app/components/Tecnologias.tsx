@@ -19,16 +19,13 @@ const tecnologias: Tecnologia[] = [
 
   // Backend
   { nome: "Node.js", categoria: "backend", icone: "🟢", cor: "#339933" },
-  { nome: "Python", categoria: "backend", icone: "🐍", cor: "#3776AB" },
   { nome: "Express", categoria: "backend", icone: "🚂", cor: "#000000" },
   { nome: "FastAPI", categoria: "backend", icone: "⚡", cor: "#009688" },
-  { nome: "PHP", categoria: "backend", icone: "🐘", cor: "#777BB4" },
 
   // Banco de Dados
   { nome: "PostgreSQL", categoria: "database", icone: "🐘", cor: "#336791" },
   { nome: "MongoDB", categoria: "database", icone: "🍃", cor: "#47A248" },
   { nome: "MySQL", categoria: "database", icone: "🐬", cor: "#4479A1" },
-  { nome: "SQLite", categoria: "database", icone: "💾", cor: "#003B57" },
 
   // Ferramentas & Outros
   { nome: "Git", categoria: "ferramentas", icone: "📚", cor: "#F05032" },
@@ -113,26 +110,6 @@ export default function Tecnologias() {
                 <TecnologiaCard key={`second-${index}`} tech={tech} />
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Estatísticas */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
-          <div className="text-center glass rounded-2xl p-6 border border-gray-800 hover:border-cyan-400/30 transition-all duration-300">
-            <div className="text-3xl font-bold text-cyan-400 mb-2">20+</div>
-            <div className="text-gray-400 text-sm">Tecnologias</div>
-          </div>
-          <div className="text-center glass rounded-2xl p-6 border border-gray-800 hover:border-purple-400/30 transition-all duration-300">
-            <div className="text-3xl font-bold text-purple-400 mb-2">4</div>
-            <div className="text-gray-400 text-sm">Categorias</div>
-          </div>
-          <div className="text-center glass rounded-2xl p-6 border border-gray-800 hover:border-green-400/30 transition-all duration-300">
-            <div className="text-3xl font-bold text-green-400 mb-2">3+</div>
-            <div className="text-gray-400 text-sm">Anos de Exp</div>
-          </div>
-          <div className="text-center glass rounded-2xl p-6 border border-gray-800 hover:border-yellow-400/30 transition-all duration-300">
-            <div className="text-3xl font-bold text-yellow-400 mb-2">50+</div>
-            <div className="text-gray-400 text-sm">Projetos</div>
           </div>
         </div>
       </div>
