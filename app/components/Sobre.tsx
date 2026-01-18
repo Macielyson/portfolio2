@@ -35,16 +35,14 @@ export default function Sobre() {
 
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                Sou um <span className="text-cyan-400 font-semibold">Desenvolvedor FullStack</span> apaixonado por transformar ideias em realidade digital. Com mais de 3 anos de experiência,
-                especializei-me em criar soluções robustas e escaláveis usando tecnologias modernas.
+                Sou um <span className="text-cyan-400 font-semibold">Desenvolvedor FullStack</span> apaixonado por transformar ideias em soluções digitais. Tenho experiência prática no desenvolvimento
+                de aplicações modernas, criando interfaces intuitivas e sistemas bem estruturados.
               </p>
-
               <p>
-                Minha jornada começou com o desenvolvimento front-end, evoluindo para arquiteturas completas de software. Acredito no poder do código limpo, na importância da experiência do usuário e
-                na constante evolução tecnológica.
+                Minha jornada começou no desenvolvimento front-end e evoluiu para soluções completas, envolvendo backend, banco de dados e integração de serviços. Valorizo código limpo, boas práticas
+                e uma experiência de usuário bem pensada.
               </p>
-
-              <p>Quando não estou codando, você me encontra explorando novas tecnologias, contribuindo para projetos open-source ou compartilhando conhecimento com a comunidade de desenvolvedores.</p>
+              <p>Estou em constante aprendizado, sempre explorando novas tecnologias e aplicando meus conhecimentos em projetos pessoais, freelances e estudos contínuos.</p>
             </div>
 
             {/* Informações Pessoais */}

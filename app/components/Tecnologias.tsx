@@ -1,39 +1,57 @@
 "use client";
 import { useEffect, useState } from "react";
+import {
+  SiReact,
+  SiNodedotjs,
+  SiTypescript,
+  SiMongodb,
+  SiPostgresql,
+  SiFigma,
+  SiAmazon,
+  SiJavascript,
+  SiTailwindcss,
+  SiBootstrap,
+  SiHtml5,
+  SiCss3,
+  SiExpress,
+  SiMysql,
+  SiGit,
+  SiDocker,
+  SiNextdotjs,
+} from "react-icons/si";
+import { IconType } from "react-icons";
 interface Tecnologia {
   nome: string;
   categoria: string;
-  icone: string;
-  cor: string; // Agora está definido no tipo
+  icone: IconType;
+  cor: string;
 }
 
 const tecnologias: Tecnologia[] = [
   // Frontend
-  { nome: "React", categoria: "frontend", icone: "⚛️", cor: "#61DAFB" },
-  { nome: "Next.js", categoria: "frontend", icone: "▲", cor: "#000000" },
-  { nome: "TypeScript", categoria: "frontend", icone: "🔷", cor: "#3178C6" },
-  { nome: "JavaScript", categoria: "frontend", icone: "🟨", cor: "#F7DF1E" },
-  { nome: "Tailwind CSS", categoria: "frontend", icone: "🎨", cor: "#06B6D4" },
-  { nome: "HTML5", categoria: "frontend", icone: "🌐", cor: "#E34F26" },
-  { nome: "CSS3", categoria: "frontend", icone: "🎀", cor: "#1572B6" },
+  { nome: "React", categoria: "frontend", icone: SiReact, cor: "#61DAFB" },
+  { nome: "Next.js", categoria: "frontend", icone: SiNextdotjs, cor: "#000000" },
+  { nome: "TypeScript", categoria: "frontend", icone: SiTypescript, cor: "#3178C6" },
+  { nome: "JavaScript", categoria: "frontend", icone: SiJavascript, cor: "#F7DF1E" },
+  { nome: "Tailwind CSS", categoria: "frontend", icone: SiTailwindcss, cor: "#06B6D4" },
+  { nome: "Bootstrap", categoria: "frontend", icone: SiBootstrap, cor: "#06B6D4" },
+  { nome: "HTML5", categoria: "frontend", icone: SiHtml5, cor: "#E34F26" },
+  { nome: "CSS3", categoria: "frontend", icone: SiCss3, cor: "#1572B6" },
 
   // Backend
-  { nome: "Node.js", categoria: "backend", icone: "🟢", cor: "#339933" },
-  { nome: "Express", categoria: "backend", icone: "🚂", cor: "#000000" },
-  { nome: "FastAPI", categoria: "backend", icone: "⚡", cor: "#009688" },
+  { nome: "Node.js", categoria: "backend", icone: SiNodedotjs, cor: "#339933" },
+  { nome: "Express", categoria: "backend", icone: SiExpress, cor: "#000000" },
 
   // Banco de Dados
-  { nome: "PostgreSQL", categoria: "database", icone: "🐘", cor: "#336791" },
-  { nome: "MongoDB", categoria: "database", icone: "🍃", cor: "#47A248" },
-  { nome: "MySQL", categoria: "database", icone: "🐬", cor: "#4479A1" },
+  { nome: "MongoDB", categoria: "database", icone: SiMongodb, cor: "#47A248" },
+  { nome: "PostgreSQL", categoria: "database", icone: SiPostgresql, cor: "#336791" },
+  { nome: "MySQL", categoria: "database", icone: SiMysql, cor: "#4479A1" },
 
   // Ferramentas & Outros
-  { nome: "Git", categoria: "ferramentas", icone: "📚", cor: "#F05032" },
-  { nome: "Docker", categoria: "ferramentas", icone: "🐳", cor: "#2496ED" },
-  { nome: "AWS", categoria: "ferramentas", icone: "☁️", cor: "#FF9900" },
-  { nome: "VSCode", categoria: "ferramentas", icone: "💻", cor: "#007ACC" },
-  { nome: "Figma", categoria: "ferramentas", icone: "🎨", cor: "#F24E1E" },
-  { nome: "Jest", categoria: "ferramentas", icone: "🃏", cor: "#C21325" },
+  { nome: "Git", categoria: "ferramentas", icone: SiGit, cor: "#F05032" },
+  { nome: "Docker", categoria: "ferramentas", icone: SiDocker, cor: "#2496ED" },
+  { nome: "AWS", categoria: "ferramentas", icone: SiAmazon, cor: "#FF9900" },
+  { nome: "Figma", categoria: "ferramentas", icone: SiFigma, cor: "#F24E1E" },
 ];
 
 const categorias = [
@@ -44,7 +62,7 @@ const categorias = [
   { id: "ferramentas", label: "Ferramentas" },
 ];
 
-export default function Tecnologias() {
+const Tecnologias = () => {
   const [categoriaAtiva, setCategoriaAtiva] = useState("all");
   const [tecnologiasFiltradas, setTecnologiasFiltradas] = useState(tecnologias);
 
@@ -158,10 +176,11 @@ export default function Tecnologias() {
       `}</style>
     </section>
   );
-}
+};
 
 // Componente Card de Tecnologia - CORRIGIDO
 function TecnologiaCard({ tech }: { tech: Tecnologia }) {
+  const Icon = tech.icone;
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -181,7 +200,7 @@ function TecnologiaCard({ tech }: { tech: Tecnologia }) {
             filter: isHovered ? "drop-shadow(0 0 8px rgba(0, 245, 255, 0.3))" : "none",
           }}
         >
-          {tech.icone}
+          <Icon size={32} color={tech.cor} />
         </div>
         <h3
           className="font-bold text-white font-space-grotesk transition-all duration-300"
@@ -206,3 +225,5 @@ function TecnologiaCard({ tech }: { tech: Tecnologia }) {
     </div>
   );
 }
+
+export default Tecnologias;
